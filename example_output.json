@@ -1,0 +1,74 @@
+{
+  "extraction_date": "Thu Dec  5 08:30:00 2024",
+  "total_messages": 3,
+  "total_thread_replies": 4,
+  "filters": {
+    "keywords": "important",
+    "date_from": "2024-01-01",
+    "date_to": "2024-12-31",
+    "threads": true
+  },
+  "messages": [
+    {
+      "type": "message",
+      "user": "U12345678",
+      "text": "This is an important update about the project",
+      "ts": "1704110400.123456",
+      "reply_count": 2,
+      "conversation_name": "general",
+      "conversation_type": "Public Channel",
+      "conversation_id": "C12345678",
+      "thread_replies": [
+        {
+          "type": "message",
+          "user": "U87654321",
+          "text": "Thanks for the update! When is the deadline?",
+          "ts": "1704110500.123457",
+          "thread_ts": "1704110400.123456"
+        },
+        {
+          "type": "message",
+          "user": "U12345678",
+          "text": "The deadline is next Friday",
+          "ts": "1704110600.123458",
+          "thread_ts": "1704110400.123456"
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U87654321",
+      "text": "Important: Please review the PR",
+      "ts": "1704196800.654321",
+      "reply_count": 2,
+      "conversation_name": "dev-team",
+      "conversation_type": "Private Channel",
+      "conversation_id": "C87654321",
+      "thread_replies": [
+        {
+          "type": "message",
+          "user": "U11111111",
+          "text": "Looking at it now",
+          "ts": "1704196900.654322",
+          "thread_ts": "1704196800.654321"
+        },
+        {
+          "type": "message",
+          "user": "U11111111",
+          "text": "LGTM, approved!",
+          "ts": "1704197000.654323",
+          "thread_ts": "1704196800.654321"
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "user": "U11111111",
+      "text": "Hey, this is important - can we meet?",
+      "ts": "1704283200.111111",
+      "conversation_name": "Direct Message",
+      "conversation_type": "Direct Message",
+      "conversation_id": "D11111111"
+    }
+  ]
+}
