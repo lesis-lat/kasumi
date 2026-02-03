@@ -25,7 +25,8 @@ sub process {
     my %seen_message_ids;
 
     foreach my $msg (@{$messages}) {
-        my $channel_id = $msg -> {conversation_id} || $msg -> {channel}{id};
+        my $channel_id =
+            $msg -> {conversation_id} || $msg -> {channel} -> {id};
         my $msg_ts     = $msg -> {ts};
 
         if (!$channel_id || !$msg_ts) {
@@ -42,7 +43,8 @@ sub process {
                 if (!$seen_message_ids{$msg_id}) {
                     $ctx_msg -> {conversation_id} = $channel_id;
                     $ctx_msg -> {conversation_name} =
-                        $msg -> {conversation_name} || $msg -> {channel}{name};
+                        $msg -> {conversation_name}
+                        || $msg -> {channel} -> {name};
                     $ctx_msg -> {is_context_message} =
                         ($ctx_msg -> {ts} ne $msg_ts);
                     if ($ctx_msg -> {is_context_message}) {
@@ -151,7 +153,7 @@ sub get_single_message {
         && $response -> {messages}
         && @{$response -> {messages}})
     {
-        return $response -> {messages}[0];
+        return $response -> {messages} -> [0];
     }
 
     return;
