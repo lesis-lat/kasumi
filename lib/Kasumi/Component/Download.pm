@@ -45,7 +45,8 @@ sub get_conversations {
             {
                 push @all_conversations, @{$response -> {channels}};
             }
-            $cursor = $response -> {response_metadata}{next_cursor} || q{};
+            $cursor =
+                $response -> {response_metadata} -> {next_cursor} || q{};
         }
         if (!$response -> {ok}) {
             my $error = $response -> {error} || 'unknown_error';
@@ -90,7 +91,8 @@ sub get_conversation_history {
             {
                 push @all_messages, @{$response -> {messages}};
             }
-            $cursor = $response -> {response_metadata}{next_cursor} || q{};
+            $cursor =
+                $response -> {response_metadata} -> {next_cursor} || q{};
         }
         if (!$response -> {ok}) {
             my $error = $response -> {error} || 'unknown_error';

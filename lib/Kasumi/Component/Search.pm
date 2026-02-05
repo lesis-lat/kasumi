@@ -55,9 +55,10 @@ sub process {
                     }
 
                     if ($match -> {channel}) {
-                        $match -> {conversation_id} = $match -> {channel}{id};
+                        $match -> {conversation_id} =
+                            $match -> {channel} -> {id};
                         $match -> {conversation_name} =
-                            $match -> {channel}{name};
+                            $match -> {channel} -> {name};
                     }
 
                     push @all_messages, $match;
@@ -69,7 +70,8 @@ sub process {
                 $page++;
             }
 
-            $cursor = $response -> {messages}{paging}{next_cursor} || q{};
+            $cursor =
+                $response -> {messages} -> {paging} -> {next_cursor} || q{};
         }
         if (!$response -> {ok}) {
             my $error = $response -> {error} || 'unknown_error';

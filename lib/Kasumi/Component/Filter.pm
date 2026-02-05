@@ -119,7 +119,8 @@ sub process_thread_extraction {
 
     foreach my $msg (@{$messages}) {
         if ($msg -> {reply_count} && $msg -> {reply_count} > 0) {
-            my $conv_id = $msg -> {conversation_id} || $msg -> {channel}{id};
+            my $conv_id =
+                $msg -> {conversation_id} || $msg -> {channel} -> {id};
             if ($conv_id) {
 
                 require Kasumi::Component::Download;
