@@ -1,4 +1,4 @@
-requires 'perl', '5.010';
+requires 'perl', 'v5.42.0';
 
 requires 'HTTP::Request', '7.01';
 requires 'JSON', '4.10';
